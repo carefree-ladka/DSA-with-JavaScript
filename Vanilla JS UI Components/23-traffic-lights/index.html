@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Traffic Lights with Timer</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Traffic Light System</h1>
+        
+        <div class="traffic-light">
+            <div class="light red" data-color="red">
+                <div class="timer" id="redTimer">30</div>
+            </div>
+            <div class="light yellow" data-color="yellow">
+                <div class="timer" id="yellowTimer">5</div>
+            </div>
+            <div class="light green" data-color="green">
+                <div class="timer" id="greenTimer">25</div>
+            </div>
+        </div>
+
+        <div class="controls">
+            <button onclick="trafficLight.start()" class="btn start">Start</button>
+            <button onclick="trafficLight.stop()" class="btn stop">Stop</button>
+            <button onclick="trafficLight.reset()" class="btn reset">Reset</button>
+        </div>
+
+        <div class="config">
+            <h3>Configuration</h3>
+            <div class="config-item">
+                <label>Red Duration (s):</label>
+                <input type="number" id="redDuration" value="30" min="1" max="120">
+            </div>
+            <div class="config-item">
+                <label>Yellow Duration (s):</label>
+                <input type="number" id="yellowDuration" value="5" min="1" max="30">
+            </div>
+            <div class="config-item">
+                <label>Green Duration (s):</label>
+                <input type="number" id="greenDuration" value="25" min="1" max="120">
+            </div>
+            <button onclick="trafficLight.updateConfig()" class="btn config-btn">Update Config</button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editable List / Todo App</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>📝 Todo App</h1>
+        
+        <div class="todo-input">
+            <input type="text" id="newTodoInput" placeholder="Add a new task..." maxlength="100">
+            <button id="addBtn" class="btn btn-primary">Add</button>
+        </div>
+        
+        <div class="todo-stats">
+            <span class="stat">Total: <span id="totalCount">0</span></span>
+            <span class="stat">Completed: <span id="completedCount">0</span></span>
+            <span class="stat">Remaining: <span id="remainingCount">0</span></span>
+        </div>
+        
+        <div class="todo-filters">
+            <button class="filter-btn active" data-filter="all">All</button>
+            <button class="filter-btn" data-filter="active">Active</button>
+            <button class="filter-btn" data-filter="completed">Completed</button>
+        </div>
+        
+        <ul id="todoList" class="todo-list"></ul>
+        
+        <div class="todo-actions">
+            <button id="clearCompleted" class="btn btn-secondary">Clear Completed</button>
+            <button id="toggleAll" class="btn btn-secondary">Toggle All</button>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>

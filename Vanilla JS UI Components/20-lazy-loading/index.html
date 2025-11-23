@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lazy Loading Images</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Lazy Loading Demo</h1>
+        
+        <div class="controls">
+            <button id="addImages" class="btn">Add More Images</button>
+            <button id="toggleMethod" class="btn">Method: Intersection Observer</button>
+            <div class="stats">
+                <span>Loaded: <span id="loadedCount">0</span></span>
+                <span>Total: <span id="totalCount">0</span></span>
+            </div>
+        </div>
+        
+        <div class="image-grid" id="imageGrid">
+            <div class="image-item" data-src="https://picsum.photos/400/300?random=1">
+                <div class="image-placeholder">
+                    <div class="loading-spinner"></div>
+                </div>
+            </div>
+            
+            <div class="image-item" data-src="https://picsum.photos/400/300?random=2">
+                <div class="image-placeholder">
+                    <div class="loading-spinner"></div>
+                </div>
+            </div>
+            
+            <div class="image-item" data-src="https://picsum.photos/400/300?random=3">
+                <div class="image-placeholder">
+                    <div class="loading-spinner"></div>
+                </div>
+            </div>
+            
+            <div class="image-item" data-src="https://picsum.photos/400/300?random=4">
+                <div class="image-placeholder">
+                    <div class="loading-spinner"></div>
+                </div>
+            </div>
+            
+            <div class="image-item" data-src="https://picsum.photos/400/300?random=5">
+                <div class="image-placeholder">
+                    <div class="loading-spinner"></div>
+                </div>
+            </div>
+            
+            <div class="image-item" data-src="https://picsum.photos/400/300?random=6">
+                <div class="image-placeholder">
+                    <div class="loading-spinner"></div>
+                </div>
+            </div>
+            
+            <div class="image-item" data-src="https://picsum.photos/400/300?random=7">
+                <div class="image-placeholder">
+                    <div class="loading-spinner"></div>
+                </div>
+            </div>
+            
+            <div class="image-item" data-src="https://picsum.photos/400/300?random=8">
+                <div class="image-placeholder">
+                    <div class="loading-spinner"></div>
+                </div>
+            </div>
+            
+            <div class="image-item" data-src="https://picsum.photos/400/300?random=9">
+                <div class="image-placeholder">
+                    <div class="loading-spinner"></div>
+                </div>
+            </div>
+            
+            <div class="image-item" data-src="https://picsum.photos/400/300?random=10">
+                <div class="image-placeholder">
+                    <div class="loading-spinner"></div>
+                </div>
+            </div>
+            
+            <div class="image-item" data-src="https://picsum.photos/400/300?random=11">
+                <div class="image-placeholder">
+                    <div class="loading-spinner"></div>
+                </div>
+            </div>
+            
+            <div class="image-item" data-src="https://picsum.photos/400/300?random=12">
+                <div class="image-placeholder">
+                    <div class="loading-spinner"></div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="load-more">
+            <p>Scroll down to load more images...</p>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>

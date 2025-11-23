@@ -1,0 +1,256 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background: #f8fafc;
+    color: #334155;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 30px;
+    color: #1e293b;
+}
+
+.demo-grid {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 30px;
+    margin-bottom: 30px;
+}
+
+.demo-section h3 {
+    margin-bottom: 15px;
+    color: #475569;
+}
+
+/* Sortable List Styles */
+.sortable-list {
+    list-style: none;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    overflow: hidden;
+}
+
+.draggable-item {
+    display: flex;
+    align-items: center;
+    padding: 15px;
+    border-bottom: 1px solid #e2e8f0;
+    cursor: move;
+    transition: all 0.2s;
+    background: white;
+}
+
+.draggable-item:last-child {
+    border-bottom: none;
+}
+
+.draggable-item:hover {
+    background: #f8fafc;
+}
+
+.draggable-item.dragging {
+    opacity: 0.5;
+    transform: rotate(2deg);
+}
+
+.draggable-item.drag-over {
+    border-top: 3px solid #3b82f6;
+}
+
+.drag-handle {
+    margin-right: 12px;
+    color: #94a3b8;
+    cursor: grab;
+    font-size: 16px;
+    user-select: none;
+}
+
+.drag-handle:active {
+    cursor: grabbing;
+}
+
+.content {
+    flex: 1;
+    font-weight: 500;
+}
+
+/* Kanban Board Styles */
+.kanban-board {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.kanban-column {
+    background: #f1f5f9;
+    border-radius: 8px;
+    padding: 15px;
+    min-height: 300px;
+}
+
+.kanban-column h4 {
+    margin-bottom: 15px;
+    color: #475569;
+    text-align: center;
+    padding: 8px;
+    background: white;
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.kanban-items {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    min-height: 200px;
+}
+
+.kanban-column.drag-over {
+    background: #dbeafe;
+    border: 2px dashed #3b82f6;
+}
+
+.kanban-item {
+    background: white;
+    padding: 15px;
+    border-radius: 6px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    cursor: move;
+    transition: all 0.2s;
+}
+
+.kanban-item:hover {
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    transform: translateY(-1px);
+}
+
+.kanban-item.dragging {
+    opacity: 0.7;
+    transform: rotate(3deg) scale(1.02);
+}
+
+.kanban-item h5 {
+    margin-bottom: 8px;
+    color: #1e293b;
+    font-size: 14px;
+}
+
+.kanban-item p {
+    color: #64748b;
+    font-size: 12px;
+    line-height: 1.4;
+}
+
+/* Drop Placeholder */
+.drop-placeholder {
+    height: 4px;
+    background: #3b82f6;
+    border-radius: 2px;
+    margin: 4px 0;
+    opacity: 0;
+    transition: opacity 0.2s;
+}
+
+.drop-placeholder.active {
+    opacity: 1;
+}
+
+/* Controls */
+.controls {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+}
+
+.btn {
+    padding: 10px 20px;
+    background: #3b82f6;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 500;
+    transition: background-color 0.2s;
+}
+
+.btn:hover {
+    background: #2563eb;
+}
+
+.output {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    font-family: monospace;
+    white-space: pre-wrap;
+    max-height: 200px;
+    overflow-y: auto;
+}
+
+/* Touch Support */
+@media (hover: none) and (pointer: coarse) {
+    .draggable-item,
+    .kanban-item {
+        cursor: default;
+    }
+    
+    .drag-handle {
+        cursor: default;
+    }
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+    .demo-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    .kanban-board {
+        grid-template-columns: 1fr;
+    }
+    
+    .controls {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .draggable-item,
+    .kanban-item {
+        padding: 12px;
+    }
+}
+
+/* Animation for smooth transitions */
+.draggable-item,
+.kanban-item {
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.sortable-list {
+    transition: all 0.2s ease;
+}
+
+/* Ghost element styling */
+.drag-ghost {
+    opacity: 0.4;
+    transform: rotate(5deg);
+}

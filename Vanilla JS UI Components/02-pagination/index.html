@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pagination Component</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Pagination Demo</h1>
+        
+        <div class="controls">
+            <label>
+                Items per page:
+                <select id="pageSize">
+                    <option value="10">10</option>
+                    <option value="20" selected>20</option>
+                    <option value="50">50</option>
+                </select>
+            </label>
+            
+            <div class="jump-to">
+                <label>
+                    Jump to page:
+                    <input type="number" id="jumpInput" min="1" placeholder="Page #">
+                    <button id="jumpBtn">Go</button>
+                </label>
+            </div>
+        </div>
+        
+        <div id="content" class="content"></div>
+        
+        <div class="pagination-wrapper">
+            <div class="pagination-info">
+                <span id="paginationInfo"></span>
+            </div>
+            
+            <div id="pagination" class="pagination"></div>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>

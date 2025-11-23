@@ -1,0 +1,278 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif, Tahoma, Geneva, Verdana, sans-serif;
+    background: #f3f2f1;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.outlook-app {
+    display: flex;
+    height: 100vh;
+}
+
+.sidebar {
+    width: 250px;
+    background: #0078d4;
+    color: white;
+}
+
+.sidebar-header {
+    padding: 20px;
+    background: #106ebe;
+    border-bottom: 1px solid #1a7bd6;
+}
+
+.sidebar-header h2 {
+    font-size: 1.4rem;
+    font-weight: 600;
+}
+
+.folder-list {
+    padding: 10px 0;
+}
+
+.folder-item {
+    padding: 12px 20px;
+    cursor: pointer;
+    transition: background 0.2s ease;
+    font-size: 14px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.folder-item:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.folder-item.active {
+    background: #1a7bd6;
+    border-right: 3px solid #fff;
+}
+
+.unread-count {
+    background: #ff4b4b;
+    color: white;
+    padding: 2px 8px;
+    border-radius: 10px;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.email-list {
+    width: 350px;
+    background: white;
+    border-right: 1px solid #e1dfdd;
+    display: flex;
+    flex-direction: column;
+}
+
+.list-header {
+    padding: 15px;
+    background: #f8f9fa;
+    border-bottom: 1px solid #e1dfdd;
+}
+
+.search-bar {
+    margin-bottom: 10px;
+}
+
+.search-bar input {
+    width: 100%;
+    padding: 8px 12px;
+    border: 1px solid #e1dfdd;
+    border-radius: 4px;
+    font-size: 14px;
+    outline: none;
+}
+
+.search-bar input:focus {
+    border-color: #0078d4;
+}
+
+.list-actions {
+    display: flex;
+    gap: 8px;
+}
+
+.action-btn {
+    background: #0078d4;
+    color: white;
+    border: none;
+    padding: 6px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 12px;
+    transition: background 0.2s ease;
+}
+
+.action-btn:hover {
+    background: #106ebe;
+}
+
+.emails-container {
+    flex: 1;
+    overflow-y: auto;
+}
+
+.email-item {
+    padding: 15px;
+    border-bottom: 1px solid #f3f2f1;
+    cursor: pointer;
+    transition: background 0.2s ease;
+}
+
+.email-item:hover {
+    background: #f8f9fa;
+}
+
+.email-item.selected {
+    background: #e3f2fd;
+    border-left: 3px solid #0078d4;
+}
+
+.email-item.unread {
+    background: #fff;
+    font-weight: 600;
+}
+
+.email-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 5px;
+}
+
+.email-sender {
+    font-size: 14px;
+    color: #323130;
+    font-weight: 500;
+}
+
+.email-time {
+    font-size: 12px;
+    color: #605e5c;
+}
+
+.email-subject {
+    font-size: 14px;
+    color: #323130;
+    margin-bottom: 3px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.email-preview-text {
+    font-size: 12px;
+    color: #605e5c;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.email-preview {
+    flex: 1;
+    background: white;
+    display: flex;
+    flex-direction: column;
+}
+
+.preview-header {
+    padding: 20px;
+    background: #f8f9fa;
+    border-bottom: 1px solid #e1dfdd;
+}
+
+.preview-header .email-subject {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #323130;
+    margin-bottom: 10px;
+}
+
+.preview-sender-info {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.sender-avatar {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: #0078d4;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.sender-details {
+    flex: 1;
+}
+
+.sender-name {
+    font-size: 14px;
+    font-weight: 500;
+    color: #323130;
+}
+
+.sender-email {
+    font-size: 12px;
+    color: #605e5c;
+}
+
+.email-date {
+    font-size: 12px;
+    color: #605e5c;
+}
+
+.preview-content {
+    flex: 1;
+    padding: 20px;
+    overflow-y: auto;
+}
+
+.email-body {
+    line-height: 1.6;
+    color: #323130;
+    font-size: 14px;
+}
+
+.no-selection {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    color: #605e5c;
+}
+
+.no-selection-icon {
+    font-size: 4rem;
+    margin-bottom: 20px;
+    opacity: 0.5;
+}
+
+.priority-high {
+    color: #d13438;
+}
+
+.priority-low {
+    color: #107c10;
+}
+
+.attachment-icon {
+    color: #605e5c;
+    margin-left: 5px;
+}

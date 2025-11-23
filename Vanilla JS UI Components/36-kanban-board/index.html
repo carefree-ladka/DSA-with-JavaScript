@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kanban Board</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="kanban-container">
+        <div class="kanban-header">
+            <h1>Kanban Board</h1>
+            <button onclick="kanban.addCard()" class="add-card-btn">+ Add Card</button>
+        </div>
+        <div class="kanban-board" id="kanbanBoard">
+            <div class="column" data-column="todo">
+                <div class="column-header">
+                    <h3>To Do</h3>
+                    <span class="card-count">0</span>
+                </div>
+                <div class="cards-container" id="todo-cards"></div>
+            </div>
+            <div class="column" data-column="inprogress">
+                <div class="column-header">
+                    <h3>In Progress</h3>
+                    <span class="card-count">0</span>
+                </div>
+                <div class="cards-container" id="inprogress-cards"></div>
+            </div>
+            <div class="column" data-column="done">
+                <div class="column-header">
+                    <h3>Done</h3>
+                    <span class="card-count">0</span>
+                </div>
+                <div class="cards-container" id="done-cards"></div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="modal" id="cardModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Add Card</h2>
+                <button onclick="kanban.hideModal()">&times;</button>
+            </div>
+            <form onsubmit="kanban.saveCard(event)">
+                <input type="text" placeholder="Card title..." id="cardTitle" required>
+                <textarea placeholder="Description..." id="cardDescription"></textarea>
+                <select id="cardPriority">
+                    <option value="low">Low Priority</option>
+                    <option value="medium">Medium Priority</option>
+                    <option value="high">High Priority</option>
+                </select>
+                <div class="modal-actions">
+                    <button type="button" onclick="kanban.hideModal()">Cancel</button>
+                    <button type="submit">Save Card</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>

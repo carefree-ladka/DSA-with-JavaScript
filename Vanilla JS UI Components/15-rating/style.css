@@ -1,0 +1,235 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background: #f8fafc;
+    color: #334155;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 40px;
+    color: #1e293b;
+}
+
+.demo-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    margin-bottom: 40px;
+}
+
+.demo-section {
+    background: white;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    text-align: center;
+}
+
+.demo-section h3 {
+    margin-bottom: 20px;
+    color: #475569;
+    font-size: 16px;
+}
+
+.rating {
+    display: inline-flex;
+    gap: 4px;
+    margin-bottom: 15px;
+    cursor: pointer;
+}
+
+.rating.readonly {
+    cursor: default;
+}
+
+.star {
+    font-size: 28px;
+    color: #e2e8f0;
+    transition: all 0.2s ease;
+    cursor: pointer;
+    position: relative;
+    user-select: none;
+}
+
+.rating.readonly .star {
+    cursor: default;
+}
+
+.star:hover {
+    transform: scale(1.1);
+}
+
+.star.filled {
+    color: #fbbf24;
+}
+
+.star.hovered {
+    color: #f59e0b;
+}
+
+/* Half star support */
+.half-stars .star {
+    position: relative;
+    display: inline-block;
+}
+
+.star-half,
+.star-full {
+    position: absolute;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+    transition: all 0.2s ease;
+}
+
+.star-half {
+    width: 50%;
+    color: #fbbf24;
+    z-index: 2;
+}
+
+.star-full {
+    width: 100%;
+    color: #e2e8f0;
+    z-index: 1;
+}
+
+.star.filled .star-full {
+    color: #fbbf24;
+}
+
+.star.half-filled .star-half {
+    color: #fbbf24;
+}
+
+.star.half-filled .star-full {
+    color: #e2e8f0;
+}
+
+.rating-value {
+    font-weight: 500;
+    color: #64748b;
+    font-size: 14px;
+}
+
+.rating-value span {
+    color: #3b82f6;
+    font-weight: 600;
+}
+
+.controls {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+}
+
+.btn {
+    padding: 10px 20px;
+    background: #3b82f6;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 500;
+    transition: background-color 0.2s;
+}
+
+.btn:hover {
+    background: #2563eb;
+}
+
+.output {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    font-family: monospace;
+    white-space: pre-wrap;
+    max-height: 200px;
+    overflow-y: auto;
+}
+
+/* Animation effects */
+@keyframes starPulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.2); }
+    100% { transform: scale(1); }
+}
+
+.star.animate {
+    animation: starPulse 0.3s ease;
+}
+
+/* Different star styles */
+.rating[data-rating="ten"] .star {
+    font-size: 20px;
+}
+
+.rating.large .star {
+    font-size: 36px;
+}
+
+.rating.small .star {
+    font-size: 20px;
+}
+
+/* Hover effects */
+.rating:not(.readonly):hover .star {
+    color: #cbd5e1;
+}
+
+.rating:not(.readonly) .star:hover,
+.rating:not(.readonly) .star:hover ~ .star {
+    color: #e2e8f0;
+}
+
+.rating:not(.readonly) .star:hover,
+.rating:not(.readonly) .star.hovered {
+    color: #f59e0b;
+}
+
+/* Focus styles for accessibility */
+.star:focus {
+    outline: 2px solid #3b82f6;
+    outline-offset: 2px;
+    border-radius: 2px;
+}
+
+@media (max-width: 768px) {
+    .demo-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    .demo-section {
+        padding: 20px;
+    }
+    
+    .star {
+        font-size: 24px;
+    }
+    
+    .rating[data-rating="ten"] .star {
+        font-size: 18px;
+    }
+    
+    .controls {
+        flex-direction: column;
+        align-items: center;
+    }
+}

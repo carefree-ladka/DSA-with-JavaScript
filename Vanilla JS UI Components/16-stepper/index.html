@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stepper / Wizard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>🧙‍♂️ Multi-Step Wizard</h1>
+        
+        <div class="stepper-header">
+            <div class="step" data-step="1">
+                <div class="step-number">1</div>
+                <div class="step-title">Personal Info</div>
+            </div>
+            <div class="step-connector"></div>
+            <div class="step" data-step="2">
+                <div class="step-number">2</div>
+                <div class="step-title">Account Details</div>
+            </div>
+            <div class="step-connector"></div>
+            <div class="step" data-step="3">
+                <div class="step-number">3</div>
+                <div class="step-title">Preferences</div>
+            </div>
+            <div class="step-connector"></div>
+            <div class="step" data-step="4">
+                <div class="step-number">4</div>
+                <div class="step-title">Review</div>
+            </div>
+        </div>
+        
+        <div class="stepper-content">
+            <div class="step-content active" data-content="1">
+                <h2>Personal Information</h2>
+                <div class="form-group">
+                    <label>First Name *</label>
+                    <input type="text" name="firstName" required>
+                </div>
+                <div class="form-group">
+                    <label>Last Name *</label>
+                    <input type="text" name="lastName" required>
+                </div>
+                <div class="form-group">
+                    <label>Date of Birth</label>
+                    <input type="date" name="dateOfBirth">
+                </div>
+                <div class="form-group">
+                    <label>Phone Number</label>
+                    <input type="tel" name="phone">
+                </div>
+            </div>
+            
+            <div class="step-content" data-content="2">
+                <h2>Account Details</h2>
+                <div class="form-group">
+                    <label>Email Address *</label>
+                    <input type="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label>Username *</label>
+                    <input type="text" name="username" required>
+                </div>
+                <div class="form-group">
+                    <label>Password *</label>
+                    <input type="password" name="password" required>
+                </div>
+                <div class="form-group">
+                    <label>Confirm Password *</label>
+                    <input type="password" name="confirmPassword" required>
+                </div>
+            </div>
+            
+            <div class="step-content" data-content="3">
+                <h2>Preferences</h2>
+                <div class="form-group">
+                    <label>Preferred Language</label>
+                    <select name="language">
+                        <option value="en">English</option>
+                        <option value="es">Spanish</option>
+                        <option value="fr">French</option>
+                        <option value="de">German</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Timezone</label>
+                    <select name="timezone">
+                        <option value="UTC">UTC</option>
+                        <option value="EST">Eastern Time</option>
+                        <option value="PST">Pacific Time</option>
+                        <option value="GMT">Greenwich Mean Time</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>
+                        <input type="checkbox" name="newsletter"> Subscribe to newsletter
+                    </label>
+                </div>
+                <div class="form-group">
+                    <label>
+                        <input type="checkbox" name="notifications"> Enable notifications
+                    </label>
+                </div>
+            </div>
+            
+            <div class="step-content" data-content="4">
+                <h2>Review & Submit</h2>
+                <div class="review-section">
+                    <h3>Personal Information</h3>
+                    <div id="reviewPersonal" class="review-data"></div>
+                </div>
+                <div class="review-section">
+                    <h3>Account Details</h3>
+                    <div id="reviewAccount" class="review-data"></div>
+                </div>
+                <div class="review-section">
+                    <h3>Preferences</h3>
+                    <div id="reviewPreferences" class="review-data"></div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="stepper-actions">
+            <button id="prevBtn" class="btn btn-secondary" disabled>Previous</button>
+            <button id="nextBtn" class="btn btn-primary">Next</button>
+            <button id="submitBtn" class="btn btn-success" style="display: none;">Submit</button>
+        </div>
+        
+        <div class="progress-bar">
+            <div class="progress-fill" id="progressFill"></div>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>

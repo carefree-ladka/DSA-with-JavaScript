@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teams UI</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="teams-app">
+        <div class="sidebar">
+            <div class="sidebar-header">
+                <h2>Teams</h2>
+            </div>
+            <div class="sidebar-nav">
+                <div class="nav-item active" data-view="chat">💬 Chat</div>
+                <div class="nav-item" data-view="teams">👥 Teams</div>
+                <div class="nav-item" data-view="calendar">📅 Calendar</div>
+                <div class="nav-item" data-view="calls">📞 Calls</div>
+            </div>
+            <div class="teams-list" id="teamsList"></div>
+        </div>
+        
+        <div class="main-content">
+            <div class="chat-header" id="chatHeader">
+                <div class="chat-title">General</div>
+                <div class="chat-actions">
+                    <button class="action-btn">📹</button>
+                    <button class="action-btn">📞</button>
+                    <button class="action-btn">👥</button>
+                </div>
+            </div>
+            
+            <div class="chat-messages" id="chatMessages"></div>
+            
+            <div class="message-input">
+                <input type="text" placeholder="Type a message..." id="messageInput">
+                <button onclick="teamsApp.sendMessage()" class="send-btn">Send</button>
+            </div>
+        </div>
+        
+        <div class="right-panel">
+            <div class="panel-header">Team Members</div>
+            <div class="members-list" id="membersList"></div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

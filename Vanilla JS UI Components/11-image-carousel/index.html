@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Carousel</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Image Carousel Demo</h1>
+        
+        <div class="carousel-wrapper">
+            <div class="carousel" id="carousel">
+                <div class="carousel-track">
+                    <div class="carousel-slide active">
+                        <img src="https://picsum.photos/800/400?random=1" alt="Slide 1">
+                        <div class="slide-content">
+                            <h3>Beautiful Landscape</h3>
+                            <p>Discover amazing places around the world</p>
+                        </div>
+                    </div>
+                    <div class="carousel-slide">
+                        <img src="https://picsum.photos/800/400?random=2" alt="Slide 2">
+                        <div class="slide-content">
+                            <h3>City Architecture</h3>
+                            <p>Modern buildings and urban design</p>
+                        </div>
+                    </div>
+                    <div class="carousel-slide">
+                        <img src="https://picsum.photos/800/400?random=3" alt="Slide 3">
+                        <div class="slide-content">
+                            <h3>Nature Photography</h3>
+                            <p>Wildlife and natural beauty</p>
+                        </div>
+                    </div>
+                    <div class="carousel-slide">
+                        <img src="https://picsum.photos/800/400?random=4" alt="Slide 4">
+                        <div class="slide-content">
+                            <h3>Ocean Views</h3>
+                            <p>Peaceful waters and coastal scenes</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <button class="carousel-btn prev" aria-label="Previous slide">‹</button>
+                <button class="carousel-btn next" aria-label="Next slide">›</button>
+                
+                <div class="carousel-dots"></div>
+            </div>
+        </div>
+        
+        <div class="controls">
+            <button id="playPause" class="btn">⏸️ Pause</button>
+            <button id="toggleInfinite" class="btn">🔄 Infinite: ON</button>
+            <label>
+                Speed: <input type="range" id="speedControl" min="1000" max="5000" value="3000" step="500">
+                <span id="speedValue">3s</span>
+            </label>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Theme Builder</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="theme-builder">
+        <div class="controls-panel">
+            <h2>Theme Builder</h2>
+            <div class="theme-selector">
+                <button onclick="themeBuilder.setTheme('light')" class="theme-btn active" data-theme="light">Light</button>
+                <button onclick="themeBuilder.setTheme('dark')" class="theme-btn" data-theme="dark">Dark</button>
+                <button onclick="themeBuilder.setTheme('system')" class="theme-btn" data-theme="system">System</button>
+            </div>
+            <div class="custom-controls">
+                <h3>Custom Theme</h3>
+                <div class="color-control">
+                    <label>Primary Color:</label>
+                    <input type="color" id="primaryColor" value="#007bff">
+                </div>
+                <div class="color-control">
+                    <label>Background:</label>
+                    <input type="color" id="backgroundColor" value="#ffffff">
+                </div>
+                <div class="color-control">
+                    <label>Text Color:</label>
+                    <input type="color" id="textColor" value="#333333">
+                </div>
+                <button onclick="themeBuilder.exportTheme()">Export JSON</button>
+                <button onclick="themeBuilder.importTheme()">Import JSON</button>
+            </div>
+        </div>
+        <div class="preview-panel">
+            <h2>Live Preview</h2>
+            <div class="preview-content">
+                <button class="preview-btn">Primary Button</button>
+                <div class="preview-card">
+                    <h3>Sample Card</h3>
+                    <p>This is a preview of your theme.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

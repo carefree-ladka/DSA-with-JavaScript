@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rich Text Editor</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="editor-container">
+        <div class="toolbar">
+            <button onclick="editor.execCommand('bold')" class="toolbar-btn" title="Bold">B</button>
+            <button onclick="editor.execCommand('italic')" class="toolbar-btn" title="Italic">I</button>
+            <button onclick="editor.execCommand('underline')" class="toolbar-btn" title="Underline">U</button>
+            <div class="separator"></div>
+            <button onclick="editor.undo()" class="toolbar-btn" title="Undo">↶</button>
+            <button onclick="editor.redo()" class="toolbar-btn" title="Redo">↷</button>
+            <div class="separator"></div>
+            <button onclick="editor.insertLink()" class="toolbar-btn" title="Link">🔗</button>
+            <button onclick="editor.insertImage()" class="toolbar-btn" title="Image">🖼️</button>
+        </div>
+        <div class="editor" id="editor" contenteditable="true" spellcheck="false">
+            <p>Start typing your content here...</p>
+        </div>
+        <div class="status-bar">
+            <span id="wordCount">Words: 0</span>
+            <span id="charCount">Characters: 0</span>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

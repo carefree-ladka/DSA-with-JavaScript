@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Builder</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="form-builder">
+        <div class="schema-panel">
+            <h3>Form Schema</h3>
+            <textarea id="schemaInput" placeholder="Enter JSON schema..."></textarea>
+            <button onclick="formBuilder.renderForm()">Render Form</button>
+            <button onclick="formBuilder.loadSample()">Load Sample</button>
+        </div>
+        <div class="form-panel">
+            <h3>Generated Form</h3>
+            <div id="formContainer"></div>
+            <div class="form-actions">
+                <button onclick="formBuilder.validateForm()">Validate</button>
+                <button onclick="formBuilder.getFormData()">Get Data</button>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

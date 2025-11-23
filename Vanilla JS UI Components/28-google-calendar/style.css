@@ -1,0 +1,369 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif, 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #fff;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.calendar-app {
+    display: flex;
+    height: 100vh;
+}
+
+.sidebar {
+    width: 280px;
+    background: #fafafa;
+    border-right: 1px solid #dadce0;
+    padding: 20px;
+    overflow-y: auto;
+}
+
+.create-btn {
+    background: #1a73e8;
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 24px;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    margin-bottom: 30px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12);
+    transition: all 0.2s ease;
+}
+
+.create-btn:hover {
+    background: #1557b0;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+.mini-calendar {
+    margin-bottom: 30px;
+}
+
+.mini-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.mini-header button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 4px 8px;
+    border-radius: 4px;
+    color: #5f6368;
+}
+
+.mini-header button:hover {
+    background: #f1f3f4;
+}
+
+.mini-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 2px;
+    font-size: 12px;
+}
+
+.mini-day {
+    aspect-ratio: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    border-radius: 50%;
+    color: #5f6368;
+}
+
+.mini-day:hover {
+    background: #f1f3f4;
+}
+
+.mini-day.today {
+    background: #1a73e8;
+    color: white;
+}
+
+.mini-day.other-month {
+    color: #dadce0;
+}
+
+.calendars-section h3 {
+    font-size: 14px;
+    font-weight: 500;
+    color: #3c4043;
+    margin-bottom: 15px;
+}
+
+.calendar-list {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.calendar-list label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 14px;
+    color: #3c4043;
+    cursor: pointer;
+}
+
+.main-calendar {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.calendar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 24px;
+    border-bottom: 1px solid #dadce0;
+}
+
+.nav-controls {
+    display: flex;
+    gap: 8px;
+}
+
+.nav-controls button {
+    background: none;
+    border: 1px solid #dadce0;
+    padding: 8px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    color: #3c4043;
+}
+
+.nav-controls button:hover {
+    background: #f8f9fa;
+}
+
+#currentMonth {
+    font-size: 22px;
+    font-weight: 400;
+    color: #3c4043;
+}
+
+.view-controls {
+    display: flex;
+    border: 1px solid #dadce0;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.view-btn {
+    background: white;
+    border: none;
+    padding: 8px 16px;
+    cursor: pointer;
+    font-size: 14px;
+    color: #3c4043;
+    border-right: 1px solid #dadce0;
+}
+
+.view-btn:last-child {
+    border-right: none;
+}
+
+.view-btn:hover {
+    background: #f8f9fa;
+}
+
+.view-btn.active {
+    background: #e8f0fe;
+    color: #1a73e8;
+}
+
+.calendar-grid {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.weekdays {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    background: #f8f9fa;
+    border-bottom: 1px solid #dadce0;
+}
+
+.weekdays div {
+    padding: 12px;
+    text-align: center;
+    font-size: 11px;
+    font-weight: 500;
+    color: #70757a;
+    text-transform: uppercase;
+}
+
+.days-grid {
+    flex: 1;
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    grid-template-rows: repeat(6, 1fr);
+}
+
+.day-cell {
+    border-right: 1px solid #dadce0;
+    border-bottom: 1px solid #dadce0;
+    padding: 8px;
+    cursor: pointer;
+    position: relative;
+    min-height: 100px;
+}
+
+.day-cell:hover {
+    background: #f8f9fa;
+}
+
+.day-number {
+    font-size: 14px;
+    color: #3c4043;
+    margin-bottom: 4px;
+}
+
+.day-cell.other-month .day-number {
+    color: #dadce0;
+}
+
+.day-cell.today .day-number {
+    background: #1a73e8;
+    color: white;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.event {
+    background: #1a73e8;
+    color: white;
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-size: 11px;
+    margin-bottom: 2px;
+    cursor: pointer;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.event.work {
+    background: #34a853;
+}
+
+.event.holidays {
+    background: #ea4335;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+}
+
+.modal-content {
+    background: white;
+    width: 400px;
+    margin: 10% auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+}
+
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 24px;
+    border-bottom: 1px solid #dadce0;
+}
+
+.modal-header h2 {
+    font-size: 18px;
+    font-weight: 500;
+    color: #3c4043;
+}
+
+.modal-header button {
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: #5f6368;
+}
+
+.modal-content form {
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.modal-content input,
+.modal-content select,
+.modal-content textarea {
+    padding: 12px;
+    border: 1px solid #dadce0;
+    border-radius: 4px;
+    font-size: 14px;
+    outline: none;
+}
+
+.modal-content input:focus,
+.modal-content select:focus,
+.modal-content textarea:focus {
+    border-color: #1a73e8;
+}
+
+.modal-content textarea {
+    resize: vertical;
+    min-height: 80px;
+}
+
+.modal-actions {
+    display: flex;
+    gap: 8px;
+    justify-content: flex-end;
+}
+
+.modal-actions button {
+    padding: 8px 16px;
+    border-radius: 4px;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.modal-actions button[type="button"] {
+    background: none;
+    border: 1px solid #dadce0;
+    color: #3c4043;
+}
+
+.modal-actions button[type="submit"] {
+    background: #1a73e8;
+    border: none;
+    color: white;
+}

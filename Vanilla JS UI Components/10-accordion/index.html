@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accordion Component</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Accordion Demo</h1>
+        
+        <div class="accordion" id="accordion">
+            <div class="accordion-item">
+                <div class="accordion-header">
+                    <button class="accordion-trigger" aria-expanded="false">
+                        <span>🚀 Getting Started</span>
+                        <span class="accordion-icon">+</span>
+                    </button>
+                </div>
+                <div class="accordion-content">
+                    <div class="accordion-body">
+                        <h4>Welcome to our platform!</h4>
+                        <p>This section covers the basics of getting started with our service. You'll learn how to set up your account, navigate the interface, and begin using our core features.</p>
+                        <ul>
+                            <li>Account setup and verification</li>
+                            <li>Dashboard overview</li>
+                            <li>Basic navigation</li>
+                            <li>First steps tutorial</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="accordion-item">
+                <div class="accordion-header">
+                    <button class="accordion-trigger" aria-expanded="false">
+                        <span>⚙️ Configuration</span>
+                        <span class="accordion-icon">+</span>
+                    </button>
+                </div>
+                <div class="accordion-content">
+                    <div class="accordion-body">
+                        <h4>Customize your experience</h4>
+                        <p>Learn how to configure the platform to match your specific needs and preferences.</p>
+                        <div class="config-options">
+                            <div class="config-item">
+                                <label>
+                                    <input type="checkbox" checked> Email notifications
+                                </label>
+                            </div>
+                            <div class="config-item">
+                                <label>
+                                    <input type="checkbox"> Dark mode
+                                </label>
+                            </div>
+                            <div class="config-item">
+                                <label>
+                                    <input type="checkbox" checked> Auto-save
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="accordion-item">
+                <div class="accordion-header">
+                    <button class="accordion-trigger" aria-expanded="false">
+                        <span>📊 Analytics & Reports</span>
+                        <span class="accordion-icon">+</span>
+                    </button>
+                </div>
+                <div class="accordion-content">
+                    <div class="accordion-body">
+                        <h4>Track your progress</h4>
+                        <p>Understand how to use our analytics tools to monitor performance and generate reports.</p>
+                        <div class="stats-preview">
+                            <div class="stat">
+                                <div class="stat-number">1,234</div>
+                                <div class="stat-label">Total Users</div>
+                            </div>
+                            <div class="stat">
+                                <div class="stat-number">89%</div>
+                                <div class="stat-label">Success Rate</div>
+                            </div>
+                            <div class="stat">
+                                <div class="stat-number">456</div>
+                                <div class="stat-label">Active Sessions</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="accordion-item">
+                <div class="accordion-header">
+                    <button class="accordion-trigger" aria-expanded="false">
+                        <span>🔒 Security & Privacy</span>
+                        <span class="accordion-icon">+</span>
+                    </button>
+                </div>
+                <div class="accordion-content">
+                    <div class="accordion-body">
+                        <h4>Keep your data safe</h4>
+                        <p>Learn about our security measures and how to protect your account and data.</p>
+                        <div class="security-features">
+                            <div class="feature">✅ Two-factor authentication</div>
+                            <div class="feature">✅ End-to-end encryption</div>
+                            <div class="feature">✅ Regular security audits</div>
+                            <div class="feature">✅ GDPR compliance</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="controls">
+            <button id="openAll" class="btn">Open All</button>
+            <button id="closeAll" class="btn">Close All</button>
+            <button id="toggleMode" class="btn">Toggle Mode: Single</button>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>

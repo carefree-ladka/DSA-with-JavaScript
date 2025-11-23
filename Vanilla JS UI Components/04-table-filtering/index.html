@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Table Filtering</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Table Filtering Demo</h1>
+        
+        <div class="filters">
+            <input type="text" id="searchInput" placeholder="Search all columns..." class="search-input">
+            <select id="departmentFilter" class="filter-select">
+                <option value="">All Departments</option>
+            </select>
+            <select id="statusFilter" class="filter-select">
+                <option value="">All Status</option>
+                <option value="Active">Active</option>
+                <option value="Inactive">Inactive</option>
+            </select>
+            <button id="clearFilters" class="btn">Clear Filters</button>
+        </div>
+        
+        <div class="table-container">
+            <table id="dataTable" class="filterable-table">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Department</th>
+                        <th>Salary</th>
+                        <th>Status</th>
+                        <th>Join Date</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </div>
+        
+        <div class="results-info">
+            <span id="resultsCount">0 results</span>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>

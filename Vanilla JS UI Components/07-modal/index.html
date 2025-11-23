@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modal Component</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Modal Demo</h1>
+        
+        <div class="buttons">
+            <button id="openModal" class="btn btn-primary">Open Modal</button>
+            <button id="openConfirm" class="btn btn-secondary">Confirm Dialog</button>
+            <button id="openForm" class="btn btn-success">Form Modal</button>
+        </div>
+        
+        <div class="demo-content">
+            <p>This is some content behind the modal. When the modal is open, this content should be inert and not focusable.</p>
+            <input type="text" placeholder="Try tabbing when modal is open">
+            <button>Another button</button>
+        </div>
+    </div>
+    
+    <!-- Modal Template -->
+    <div id="modal" class="modal" role="dialog" aria-modal="true" aria-hidden="true">
+        <div class="modal-backdrop"></div>
+        <div class="modal-container">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h2 id="modalTitle" class="modal-title"></h2>
+                    <button class="modal-close" aria-label="Close modal">&times;</button>
+                </div>
+                <div id="modalBody" class="modal-body"></div>
+                <div id="modalFooter" class="modal-footer"></div>
+            </div>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>

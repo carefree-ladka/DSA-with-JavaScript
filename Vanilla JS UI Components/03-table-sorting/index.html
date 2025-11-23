@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Table Sorting</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Table Sorting Demo</h1>
+        
+        <div class="controls">
+            <button id="addData" class="btn">Add Random Data</button>
+            <button id="clearSort" class="btn">Clear Sort</button>
+            <span class="sort-info">Click column headers to sort. Hold Shift for multi-sort.</span>
+        </div>
+        
+        <div class="table-container">
+            <table id="dataTable" class="sortable-table">
+                <thead>
+                    <tr>
+                        <th data-column="id" data-type="number">ID</th>
+                        <th data-column="name" data-type="string">Name</th>
+                        <th data-column="email" data-type="string">Email</th>
+                        <th data-column="age" data-type="number">Age</th>
+                        <th data-column="salary" data-type="number">Salary</th>
+                        <th data-column="department" data-type="string">Department</th>
+                        <th data-column="joinDate" data-type="date">Join Date</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </div>
+        
+        <div class="sort-status">
+            <div id="sortStatus" class="sort-indicators"></div>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>

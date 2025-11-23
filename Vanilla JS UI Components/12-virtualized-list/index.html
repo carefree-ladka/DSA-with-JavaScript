@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Virtualized List</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Virtualized List Demo</h1>
+        
+        <div class="controls">
+            <label>
+                Total Items: 
+                <select id="itemCount">
+                    <option value="1000">1,000</option>
+                    <option value="10000" selected>10,000</option>
+                    <option value="100000">100,000</option>
+                </select>
+            </label>
+            
+            <label>
+                Item Height: 
+                <select id="itemHeight">
+                    <option value="50">50px</option>
+                    <option value="80" selected>80px</option>
+                    <option value="120">120px</option>
+                </select>
+            </label>
+            
+            <button id="scrollToTop" class="btn">Scroll to Top</button>
+            <button id="scrollToMiddle" class="btn">Scroll to Middle</button>
+            <button id="scrollToBottom" class="btn">Scroll to Bottom</button>
+        </div>
+        
+        <div class="stats">
+            <div class="stat">
+                <span class="label">Rendered Items:</span>
+                <span id="renderedCount">0</span>
+            </div>
+            <div class="stat">
+                <span class="label">Scroll Position:</span>
+                <span id="scrollPos">0</span>
+            </div>
+            <div class="stat">
+                <span class="label">Performance:</span>
+                <span id="performance">0ms</span>
+            </div>
+        </div>
+        
+        <div id="virtualList" class="virtual-list">
+            <div class="virtual-list-spacer-before"></div>
+            <div class="virtual-list-content"></div>
+            <div class="virtual-list-spacer-after"></div>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>

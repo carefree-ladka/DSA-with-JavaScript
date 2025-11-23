@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Drag & Drop</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Drag & Drop Demo</h1>
+        
+        <div class="demo-grid">
+            <div class="demo-section">
+                <h3>Sortable List</h3>
+                <ul id="sortableList" class="sortable-list">
+                    <li class="draggable-item" draggable="true" data-id="1">
+                        <span class="drag-handle">⋮⋮</span>
+                        <span class="content">Task 1: Complete project proposal</span>
+                    </li>
+                    <li class="draggable-item" draggable="true" data-id="2">
+                        <span class="drag-handle">⋮⋮</span>
+                        <span class="content">Task 2: Review code changes</span>
+                    </li>
+                    <li class="draggable-item" draggable="true" data-id="3">
+                        <span class="drag-handle">⋮⋮</span>
+                        <span class="content">Task 3: Update documentation</span>
+                    </li>
+                    <li class="draggable-item" draggable="true" data-id="4">
+                        <span class="drag-handle">⋮⋮</span>
+                        <span class="content">Task 4: Test new features</span>
+                    </li>
+                </ul>
+            </div>
+            
+            <div class="demo-section">
+                <h3>Kanban Board</h3>
+                <div class="kanban-board">
+                    <div class="kanban-column" data-status="todo">
+                        <h4>To Do</h4>
+                        <div class="kanban-items">
+                            <div class="kanban-item" draggable="true" data-id="k1">
+                                <h5>Design Homepage</h5>
+                                <p>Create wireframes and mockups</p>
+                            </div>
+                            <div class="kanban-item" draggable="true" data-id="k2">
+                                <h5>Setup Database</h5>
+                                <p>Configure production environment</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="kanban-column" data-status="progress">
+                        <h4>In Progress</h4>
+                        <div class="kanban-items">
+                            <div class="kanban-item" draggable="true" data-id="k3">
+                                <h5>API Development</h5>
+                                <p>Building REST endpoints</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="kanban-column" data-status="done">
+                        <h4>Done</h4>
+                        <div class="kanban-items">
+                            <div class="kanban-item" draggable="true" data-id="k4">
+                                <h5>User Authentication</h5>
+                                <p>Login and registration complete</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="controls">
+            <button id="addItem" class="btn">Add Item</button>
+            <button id="resetOrder" class="btn">Reset Order</button>
+            <button id="getOrder" class="btn">Get Current Order</button>
+        </div>
+        
+        <div id="output" class="output"></div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>

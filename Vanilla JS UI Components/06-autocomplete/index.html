@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Autocomplete Component</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Autocomplete Demo</h1>
+        
+        <div class="search-container">
+            <div class="autocomplete-wrapper">
+                <input 
+                    type="text" 
+                    id="searchInput" 
+                    placeholder="Search countries..."
+                    autocomplete="off"
+                    aria-label="Search countries"
+                    aria-expanded="false"
+                    aria-haspopup="listbox"
+                >
+                <div id="loading" class="loading hidden">
+                    <div class="spinner"></div>
+                </div>
+                <div id="dropdown" class="dropdown hidden" role="listbox"></div>
+            </div>
+        </div>
+        
+        <div class="selected-items">
+            <h3>Selected:</h3>
+            <div id="selectedList" class="selected-list"></div>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>

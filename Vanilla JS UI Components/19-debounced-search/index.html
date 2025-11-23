@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Debounced Search</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>🔍 Advanced Search Demo</h1>
+        
+        <div class="search-wrapper">
+            <div class="search-container">
+                <input type="text" id="searchInput" placeholder="Search for movies, actors, or genres..." autocomplete="off">
+                <div class="search-icon">🔍</div>
+                <div class="loading-spinner hidden" id="loadingSpinner"></div>
+                <button class="clear-btn hidden" id="clearBtn">×</button>
+            </div>
+            
+            <div class="search-filters">
+                <select id="categoryFilter">
+                    <option value="">All Categories</option>
+                    <option value="movie">Movies</option>
+                    <option value="actor">Actors</option>
+                    <option value="genre">Genres</option>
+                </select>
+                
+                <select id="sortBy">
+                    <option value="relevance">Relevance</option>
+                    <option value="name">Name</option>
+                    <option value="year">Year</option>
+                    <option value="rating">Rating</option>
+                </select>
+            </div>
+        </div>
+        
+        <div class="search-results" id="searchResults">
+            <div class="search-placeholder">
+                <div class="placeholder-icon">🎬</div>
+                <h3>Start typing to search</h3>
+                <p>Search for movies, actors, directors, and more...</p>
+            </div>
+        </div>
+        
+        <div class="search-stats" id="searchStats"></div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>

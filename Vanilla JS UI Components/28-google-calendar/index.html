@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Google Calendar</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="calendar-app">
+        <div class="sidebar">
+            <button class="create-btn" onclick="calendar.showEventModal()">+ Create</button>
+            <div class="mini-calendar">
+                <div class="mini-header">
+                    <button onclick="calendar.prevMonth()">&lt;</button>
+                    <span id="miniMonthYear"></span>
+                    <button onclick="calendar.nextMonth()">&gt;</button>
+                </div>
+                <div class="mini-grid" id="miniGrid"></div>
+            </div>
+            <div class="calendars-section">
+                <h3>My calendars</h3>
+                <div class="calendar-list">
+                    <label><input type="checkbox" checked> Personal</label>
+                    <label><input type="checkbox" checked> Work</label>
+                    <label><input type="checkbox" checked> Holidays</label>
+                </div>
+            </div>
+        </div>
+        
+        <div class="main-calendar">
+            <div class="calendar-header">
+                <div class="nav-controls">
+                    <button onclick="calendar.prevMonth()">&lt;</button>
+                    <button onclick="calendar.nextMonth()">&gt;</button>
+                    <button onclick="calendar.goToToday()">Today</button>
+                </div>
+                <h1 id="currentMonth"></h1>
+                <div class="view-controls">
+                    <button class="view-btn active" data-view="month">Month</button>
+                    <button class="view-btn" data-view="week">Week</button>
+                    <button class="view-btn" data-view="day">Day</button>
+                </div>
+            </div>
+            
+            <div class="calendar-grid">
+                <div class="weekdays">
+                    <div>Sun</div><div>Mon</div><div>Tue</div><div>Wed</div><div>Thu</div><div>Fri</div><div>Sat</div>
+                </div>
+                <div class="days-grid" id="daysGrid"></div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="modal" id="eventModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Add Event</h2>
+                <button onclick="calendar.hideEventModal()">&times;</button>
+            </div>
+            <form onsubmit="calendar.saveEvent(event)">
+                <input type="text" placeholder="Event title" id="eventTitle" required>
+                <input type="date" id="eventDate" required>
+                <input type="time" id="eventTime" required>
+                <select id="eventCalendar">
+                    <option value="personal">Personal</option>
+                    <option value="work">Work</option>
+                    <option value="holidays">Holidays</option>
+                </select>
+                <textarea placeholder="Description" id="eventDescription"></textarea>
+                <div class="modal-actions">
+                    <button type="button" onclick="calendar.hideEventModal()">Cancel</button>
+                    <button type="submit">Save</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>

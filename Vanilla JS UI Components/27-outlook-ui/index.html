@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Outlook UI</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="outlook-app">
+        <div class="sidebar">
+            <div class="sidebar-header">
+                <h2>📧 Outlook</h2>
+            </div>
+            <div class="folder-list">
+                <div class="folder-item active" data-folder="inbox">
+                    📥 Inbox <span class="unread-count">12</span>
+                </div>
+                <div class="folder-item" data-folder="sent">📤 Sent Items</div>
+                <div class="folder-item" data-folder="drafts">📝 Drafts <span class="unread-count">3</span></div>
+                <div class="folder-item" data-folder="deleted">🗑️ Deleted Items</div>
+                <div class="folder-item" data-folder="junk">🚫 Junk Email</div>
+            </div>
+        </div>
+        
+        <div class="email-list">
+            <div class="list-header">
+                <div class="search-bar">
+                    <input type="text" placeholder="Search emails..." id="searchInput">
+                </div>
+                <div class="list-actions">
+                    <button class="action-btn" onclick="outlookApp.composeEmail()">✏️ New</button>
+                    <button class="action-btn">🔄 Refresh</button>
+                </div>
+            </div>
+            <div class="emails-container" id="emailsContainer"></div>
+        </div>
+        
+        <div class="email-preview">
+            <div class="preview-header" id="previewHeader">
+                <div class="email-subject">Select an email to preview</div>
+            </div>
+            <div class="preview-content" id="previewContent">
+                <div class="no-selection">
+                    <div class="no-selection-icon">📧</div>
+                    <p>Choose an email from the list to read it here.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

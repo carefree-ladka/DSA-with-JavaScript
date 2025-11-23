@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dropdown Component</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Dropdown Demo</h1>
+        
+        <div class="demo-grid">
+            <div class="demo-item">
+                <h3>Basic Dropdown</h3>
+                <div class="dropdown" data-dropdown="basic">
+                    <button class="dropdown-trigger">Select Option</button>
+                    <div class="dropdown-menu">
+                        <div class="dropdown-item" data-value="option1">Option 1</div>
+                        <div class="dropdown-item" data-value="option2">Option 2</div>
+                        <div class="dropdown-item" data-value="option3">Option 3</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="demo-item">
+                <h3>With Icons</h3>
+                <div class="dropdown" data-dropdown="icons">
+                    <button class="dropdown-trigger">
+                        <span>🏠 Home</span>
+                        <span class="arrow">▼</span>
+                    </button>
+                    <div class="dropdown-menu">
+                        <div class="dropdown-item" data-value="home">🏠 Home</div>
+                        <div class="dropdown-item" data-value="profile">👤 Profile</div>
+                        <div class="dropdown-item" data-value="settings">⚙️ Settings</div>
+                        <div class="dropdown-item" data-value="logout">🚪 Logout</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="demo-item">
+                <h3>Multi-Select</h3>
+                <div class="dropdown multi-select" data-dropdown="multi">
+                    <button class="dropdown-trigger">
+                        <span class="selected-count">Select items...</span>
+                        <span class="arrow">▼</span>
+                    </button>
+                    <div class="dropdown-menu">
+                        <div class="dropdown-item" data-value="js">
+                            <input type="checkbox" id="js"> JavaScript
+                        </div>
+                        <div class="dropdown-item" data-value="py">
+                            <input type="checkbox" id="py"> Python
+                        </div>
+                        <div class="dropdown-item" data-value="java">
+                            <input type="checkbox" id="java"> Java
+                        </div>
+                        <div class="dropdown-item" data-value="cpp">
+                            <input type="checkbox" id="cpp"> C++
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="demo-item">
+                <h3>Searchable</h3>
+                <div class="dropdown searchable" data-dropdown="search">
+                    <button class="dropdown-trigger">Search countries...</button>
+                    <div class="dropdown-menu">
+                        <input type="text" class="dropdown-search" placeholder="Type to search...">
+                        <div class="dropdown-items">
+                            <div class="dropdown-item" data-value="us">United States</div>
+                            <div class="dropdown-item" data-value="ca">Canada</div>
+                            <div class="dropdown-item" data-value="uk">United Kingdom</div>
+                            <div class="dropdown-item" data-value="de">Germany</div>
+                            <div class="dropdown-item" data-value="fr">France</div>
+                            <div class="dropdown-item" data-value="jp">Japan</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="selected-values">
+            <h3>Selected Values:</h3>
+            <div id="output"></div>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>

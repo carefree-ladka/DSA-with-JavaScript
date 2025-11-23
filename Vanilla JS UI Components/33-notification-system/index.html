@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notification System</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="demo-container">
+        <h1>Notification System</h1>
+        <div class="controls">
+            <button onclick="notifications.show('Success message!', 'success')">Success</button>
+            <button onclick="notifications.show('Error occurred!', 'error')">Error</button>
+            <button onclick="notifications.show('Warning message!', 'warning')">Warning</button>
+            <button onclick="notifications.show('Info message!', 'info')">Info</button>
+        </div>
+        <div class="position-controls">
+            <label>Position:</label>
+            <select onchange="notifications.setPosition(this.value)">
+                <option value="top-right">Top Right</option>
+                <option value="top-left">Top Left</option>
+                <option value="bottom-right">Bottom Right</option>
+                <option value="bottom-left">Bottom Left</option>
+            </select>
+        </div>
+    </div>
+    <div class="notification-container top-right" id="notificationContainer"></div>
+    <script src="script.js"></script>
+</body>
+</html>

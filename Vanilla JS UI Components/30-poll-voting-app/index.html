@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Poll/Voting App</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="poll-container">
+        <div class="poll-header">
+            <h1>📊 Live Poll</h1>
+            <button class="create-poll-btn" onclick="pollApp.showCreateModal()">+ Create Poll</button>
+        </div>
+        
+        <div class="polls-list" id="pollsList"></div>
+    </div>
+    
+    <div class="modal" id="createModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Create New Poll</h2>
+                <button onclick="pollApp.hideCreateModal()">&times;</button>
+            </div>
+            <form onsubmit="pollApp.createPoll(event)">
+                <input type="text" placeholder="Poll question..." id="pollQuestion" required>
+                <div class="options-container">
+                    <input type="text" placeholder="Option 1" class="option-input" required>
+                    <input type="text" placeholder="Option 2" class="option-input" required>
+                    <input type="text" placeholder="Option 3" class="option-input">
+                    <input type="text" placeholder="Option 4" class="option-input">
+                </div>
+                <div class="modal-actions">
+                    <button type="button" onclick="pollApp.hideCreateModal()">Cancel</button>
+                    <button type="submit">Create Poll</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>

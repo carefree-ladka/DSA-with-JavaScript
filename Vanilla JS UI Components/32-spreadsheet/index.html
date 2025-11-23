@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spreadsheet</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="spreadsheet-container">
+        <div class="toolbar">
+            <input type="text" id="formulaBar" placeholder="Enter formula or value...">
+            <button onclick="spreadsheet.addRow()">Add Row</button>
+            <button onclick="spreadsheet.addColumn()">Add Column</button>
+        </div>
+        <div class="spreadsheet-wrapper">
+            <div class="row-headers" id="rowHeaders"></div>
+            <div class="column-headers" id="columnHeaders"></div>
+            <div class="grid-container" id="gridContainer"></div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

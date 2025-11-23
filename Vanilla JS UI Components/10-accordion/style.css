@@ -1,0 +1,248 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background: #f8fafc;
+    color: #334155;
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 40px;
+    color: #1e293b;
+}
+
+.accordion {
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    margin-bottom: 30px;
+}
+
+.accordion-item {
+    border-bottom: 1px solid #e2e8f0;
+}
+
+.accordion-item:last-child {
+    border-bottom: none;
+}
+
+.accordion-header {
+    position: relative;
+}
+
+.accordion-trigger {
+    width: 100%;
+    padding: 20px 24px;
+    background: none;
+    border: none;
+    text-align: left;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 16px;
+    font-weight: 600;
+    color: #374151;
+    transition: all 0.2s ease;
+}
+
+.accordion-trigger:hover {
+    background: #f8fafc;
+}
+
+.accordion-trigger:focus {
+    outline: none;
+    background: #f1f5f9;
+    box-shadow: inset 0 0 0 2px #3b82f6;
+}
+
+.accordion-trigger[aria-expanded="true"] {
+    background: #f8fafc;
+    color: #3b82f6;
+}
+
+.accordion-icon {
+    font-size: 20px;
+    font-weight: 300;
+    transition: transform 0.3s ease;
+    color: #64748b;
+}
+
+.accordion-trigger[aria-expanded="true"] .accordion-icon {
+    transform: rotate(45deg);
+    color: #3b82f6;
+}
+
+.accordion-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+}
+
+.accordion-item.open .accordion-content {
+    max-height: 1000px;
+}
+
+.accordion-body {
+    padding: 0 24px 24px;
+    color: #64748b;
+}
+
+.accordion-body h4 {
+    color: #374151;
+    margin-bottom: 12px;
+    font-size: 18px;
+}
+
+.accordion-body p {
+    margin-bottom: 16px;
+}
+
+.accordion-body ul {
+    margin-left: 20px;
+    margin-bottom: 16px;
+}
+
+.accordion-body li {
+    margin-bottom: 6px;
+}
+
+.config-options {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.config-item label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+    padding: 8px;
+    border-radius: 4px;
+    transition: background-color 0.2s;
+}
+
+.config-item label:hover {
+    background: #f1f5f9;
+}
+
+.config-item input[type="checkbox"] {
+    width: 16px;
+    height: 16px;
+    accent-color: #3b82f6;
+}
+
+.stats-preview {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    margin-top: 16px;
+}
+
+.stat {
+    text-align: center;
+    padding: 16px;
+    background: #f8fafc;
+    border-radius: 8px;
+    border: 1px solid #e2e8f0;
+}
+
+.stat-number {
+    font-size: 24px;
+    font-weight: 700;
+    color: #3b82f6;
+    margin-bottom: 4px;
+}
+
+.stat-label {
+    font-size: 12px;
+    color: #64748b;
+    font-weight: 500;
+}
+
+.security-features {
+    display: grid;
+    gap: 8px;
+    margin-top: 16px;
+}
+
+.feature {
+    padding: 8px 12px;
+    background: #ecfdf5;
+    color: #065f46;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.controls {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.btn {
+    padding: 10px 20px;
+    background: #3b82f6;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 500;
+    transition: background-color 0.2s;
+}
+
+.btn:hover {
+    background: #2563eb;
+}
+
+/* Animation for smooth opening/closing */
+.accordion-content {
+    transition: max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Multiple mode styles */
+.accordion.multiple .accordion-item.open .accordion-trigger {
+    background: #eff6ff;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px 15px;
+    }
+    
+    .accordion-trigger {
+        padding: 16px 20px;
+        font-size: 15px;
+    }
+    
+    .accordion-body {
+        padding: 0 20px 20px;
+    }
+    
+    .stats-preview {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+    
+    .controls {
+        flex-direction: column;
+        align-items: center;
+    }
+}
