@@ -1,27 +1,23 @@
-// Permutations - Backtracking Pattern
-
+// Permutations - Generate all permutations of array
 const permute = (nums) => {
   const result = [];
-
-  const backtrack = (current) => {
-    if (current.length === nums.length) {
-      result.push([...current]);
+  const backtrack = (path) => {
+    if (path.length === nums.length) {
+      result.push([...path]);
       return;
     }
-
-    for (const num of nums) {
-      if (!current.includes(num)) {
-        current.push(num);
-        backtrack(current);
-        current.pop();
+    for (let num of nums) {
+      if (!path.includes(num)) {
+        path.push(num);
+        backtrack(path);
+        path.pop();
       }
     }
   };
-
   backtrack([]);
   return result;
 };
 
 // Test Cases
-console.log(permute([1, 2, 3])); // [[1,2,3],[1,3,2],[2,1,3],[2,3,1],[3,1,2],[3,2,1]]
-console.log(permute([0, 1])); // [[0,1],[1,0]]
+console.log(permute([1,2,3])); // [[1,2,3],[1,3,2],[2,1,3],[2,3,1],[3,1,2],[3,2,1]]
+console.log(permute([0,1])); // [[0,1],[1,0]]
